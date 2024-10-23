@@ -9,7 +9,8 @@ const {
     logIn,
     emailActivation,
     userData,
-    passwordCreation
+    passwordCreation,
+    Register
 } = require('../Controller/AccountManagement/AccountController')
 
 
@@ -62,6 +63,7 @@ const upload = multer({ storage });
 
 
 //AccountController Routes
+router.post('/api/Register',Register)
 router.post('/api/signup',adminRoute, signUp)
 router.post('/api/passwordCreation', passwordCreation)
 router.post('/api/login', logIn)
